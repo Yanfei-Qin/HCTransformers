@@ -1,4 +1,5 @@
 # multi_kmeans.py
+# Mostly borrow from:
 # https://raw.githubusercontent.com/DeMoriarty/fast_pytorch_kmeans/master/fast_pytorch_kmeans/multi_kmeans.py
 import math
 import torch

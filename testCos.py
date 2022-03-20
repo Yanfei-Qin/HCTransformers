@@ -12,7 +12,6 @@ import random
 import time
 import torch.nn.functional as F
 import feature_loader as feat_loader
-from baselinefinetune import BaselineFinetune
 from numpy.linalg import norm
 from sklearn.preprocessing import normalize
 

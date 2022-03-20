@@ -227,6 +227,9 @@ def train_dino(args):
 
     # ============ preparing optimizer ... ============
     params_groups = utils.get_params_groups(student)
+    params_groups[0]['params'] = params_groups[0]['params'] + \
+                                list(surrogate_loss1.parameters()) + \
+                                list(surrogate_loss2.parameters())
     if args.optimizer == "adamw":
         optimizer = torch.optim.AdamW(params_groups)  # to use with ViTs
     elif args.optimizer == "sgd":

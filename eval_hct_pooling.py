@@ -214,7 +214,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_shots', default=1, type=int)
     parser.add_argument('--seed', default=99, type=int)
 
-    parser.add_argument('--partition', default='test', type=str)
+    parser.add_argument('--partition', default='val', type=str)
     parser.add_argument('--epochs', default='-1', type=str, help='Number of epochs of training.')
     parser.add_argument('--save', default=1, type=int)
     parser.add_argument('--isfile', default=-1, type=int)

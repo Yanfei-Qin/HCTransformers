@@ -271,6 +271,12 @@ def train_dino(args):
     # ============ preparing optimizer ... ============
     params_groups_392 = utils.get_params_groups(student_392)
     params_groups_196 = utils.get_params_groups(student_196)
+    params_groups_392[0]['params'] = params_groups_392[0]['params'] + \
+                                list(surrogate_loss_392.parameters()) + \
+                                list(surrogate_loss_392_2.parameters())
+    params_groups_196[0]['params'] = params_groups_196[0]['params'] + \
+                                list(surrogate_loss_196.parameters()) + \
+                                list(surrogate_loss_196_2.parameters())
     if args.optimizer == "adamw":
         optimizer = torch.optim.AdamW(params_groups_392 + params_groups_196)  # to use with ViTs
     # elif args.optimizer == "sgd":
